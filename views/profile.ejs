@@ -1,0 +1,45 @@
+<% include partials/head %>
+
+  <body>
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="text-center">
+        <h1 class=" fa fa-user"> Profile</h1><br>
+        <span><strong>user id</strong>: <%= user._id ? user._id : '' %></span><br>
+        <span class="fa fa-sign-out"><a href="/logout"> Sign out</a></span>
+        <hr>
+        <div class="jumbotron">
+          <% if (user.email != null) { %>  
+            <img src="https://avatars.io/gravatar/<%= user.email %>/140" class="img-circle"><br>
+            <strong>email</strong>: <%= user.email %><br>
+          <% } %>
+
+          <% if (user.facebook_id != null) { %>  
+            <h2 class="fa fa-facebook"> Facebook</h2><br>
+            <img src="https://avatars.io/gravatar/<%= user.email %>/140" class="img-circle"><br>
+            <strong>id</strong>: <%= user.facebook_id %><br>
+            <strong>email</strong>: <%= user.email %><br>
+            <strong>name</strong>: <%= user.firstName %> <%= user.lastName %><br>
+          <% } %>
+
+          <% if (user.google_id != null) { %>  
+            <h2 class="fa fa-google-plus"> Google</h2><br>
+            <img src="https://avatars.io/gravatar/<%= user.email %>/140" class="img-circle"><br>
+            <strong>id</strong>: <%= user.google_id %><br>
+            <strong>token</strong>: <%= user.google_token %><br>
+            <strong>email</strong>: <%= user.email %><br>
+            <strong>name</strong>: <%= user.firstName %> <%= user.lastName %><br>
+          <% } %>
+
+          <% if (user.linkedin_id != null) { %>  
+            <h2 class="fa fa-linkedin"> LinkedIn</h2><br>
+            <img src="https://avatars.io/gravatar/<%= user.email %>/140" class="img-circle"><br>
+            <strong>id</strong>: <%= user.linkedin_id %><br>
+            <strong>token</strong>: <%= user.linkedin_token %><br>
+            <strong>email</strong>: <%= user.email %><br>
+            <strong>name</strong>: <%= user.firstName %> <%= user.lastName %><br>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<% include partials/head %>
+
+  <body>
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="jumbotron text-center">
+        <h1><span class="fa fa-sign-in"></span> Inscription</h1>
+
+        <% if (message != null) { %>
+          <div class="alert-danger"><%= message %></div>
+        <% } %>
+
+        <form action="/signup" method="post">
+          <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" class="form-control" name="password" id="password1" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Doit contenir au moins 6 caractères' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required />
+          </div>
+          <div class="form-group">
+            <label>Confirmer le mot de passe</label>
+            <input type="password" class="form-control" name="password-confirm" id="password2" required />
+          </div>
+          <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" class="form-control" name="firstName" title="nom" required />
+          </div>
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label>Adresse</label>
+            <input type="text" class="form-control" name="address1" placeholder="Adresse" required />
+            <input type="text" class="form-control" name="address2" placeholder="Adresse" />
+            <input type="text" class="form-control" name="zipCode" placeholder="Code Postal" required />
+            <input type="text" class="form-control" name="city" placeholder="Ville" required />
+            <input type="text" class="form-control" name="country" placeholder="Pays" value="FRANCE" required />
+          </div>
+          <div class="form-group">
+            <label>Code club d'investissement</label><br />
+            Si vous faites partie d'un club d'investissement, demandez le code d'accès à votre président ou trésorier
+            <input type="text" class="form-control" name="clubCode" />
+          </div>
+          <div>
+            <input type="submit" class="form-control" value="Valider" />
+          </div>
+        </form>
+      </div>
+      <hr>
+      <span class="fa fa-sign-in"> Vous avez déjà un compte ?<a href="/login"> Connexion</a></span>
+      <p>Ou <a href="/">page d'accueil</a>.</p>
+    </div>
+    
+  </body>
+</html>

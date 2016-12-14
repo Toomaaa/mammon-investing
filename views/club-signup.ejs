@@ -1,0 +1,358 @@
+<% include partials/head %>
+
+	<body>
+
+		<form action="/club-signup" method="post">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center"><h1>Inscription d'un nouveau club d'investissement</h1></div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<% if (message != null) { %>
+		          <div class="alert-danger"><%= message %></div>
+		        <% } %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-3 col-lg-3">Nom du club :</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="clubName" required></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-3 col-lg-3">Montant du versement initial :</div>
+						<div class="col-lg-3"><input type="number" class="form-control" name="initialAmount" required></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-3 col-lg-3">Montant du versement mensuel :</div>
+						<div class="col-lg-3"><input type="number" class="form-control" name="monthlyAmount" required></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-3 col-lg-3">Montant de la part :</div>
+						<div class="col-lg-3"><input type="number" class="form-control" name="shareAmount" required></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-3 col-lg-3">Date de création du club :</div>
+						<div class="col-lg-3"><input type="date" class="form-control" name="creationDate" required></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-3 col-lg-3">Pourcentage Frais de démission :</div>
+						<div class="col-lg-3"><input type="number" class="form-control" name="exitPercentage" required></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-offset-3 col-lg-3">Membres :<br /><br /></div>
+				</div>
+				<div class="row">
+					<div class="col-lg-offset-2 col-lg-2 text-center"><b>Prénom</b></div>
+					<div class="col-lg-2 text-center"><b>Nom</b></div>
+					<div class="col-lg-1 text-center"><b>Fonction</b></div>
+					<div class="col-lg-3 text-center"><b>Email</b></div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName1" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName1" /></div>
+						<div class="col-lg-1">
+							<select name="function1" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email1" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName2" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName2" /></div>
+						<div class="col-lg-1">
+							<select name="function2" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email2" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName3" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName3" /></div>
+						<div class="col-lg-1">
+							<select name="function3" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email3" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName4" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName4" /></div>
+						<div class="col-lg-1">
+							<select name="function4" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email4" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName5" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName5" /></div>
+						<div class="col-lg-1">
+							<select name="function5" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email5" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName6" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName6" /></div>
+						<div class="col-lg-1">
+							<select name="function6" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email6" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName7" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName7" /></div>
+						<div class="col-lg-1">
+							<select name="function7" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email7" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName8" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName8" /></div>
+						<div class="col-lg-1">
+							<select name="function8" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email8" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName9" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName9" /></div>
+						<div class="col-lg-1">
+							<select name="function9" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email9" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName10" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName10" /></div>
+						<div class="col-lg-1">
+							<select name="function10" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email10" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName11" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName11" /></div>
+						<div class="col-lg-1">
+							<select name="function11" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email11" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName12" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName12" /></div>
+						<div class="col-lg-1">
+							<select name="function12" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email12" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName13" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName13" /></div>
+						<div class="col-lg-1">
+							<select name="function13" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email13" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName14" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName14" /></div>
+						<div class="col-lg-1">
+							<select name="function14" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email14" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName15" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName15" /></div>
+						<div class="col-lg-1">
+							<select name="function15" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email15" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName16" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName16" /></div>
+						<div class="col-lg-1">
+							<select name="function16" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email16" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName17" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName17" /></div>
+						<div class="col-lg-1">
+							<select name="function17" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email17" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName18" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName18" /></div>
+						<div class="col-lg-1">
+							<select name="function18" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email18" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName19" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName19" /></div>
+						<div class="col-lg-1">
+							<select name="function19" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email19" /></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-2"><input type="text" class="form-control" name="firstName20" /></div>
+						<div class="col-lg-2"><input type="text" class="form-control" name="lastName20" /></div>
+						<div class="col-lg-1">
+							<select name="function20" />
+						    <option value="member">Membre</option>
+						    <option value="treasurer">Trésorier</option>
+						    <option value="president">Président</option>
+						  </select>
+						</div>
+						<div class="col-lg-3"><input type="text" class="form-control" name="email20" /></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-offset-2 col-lg-8 text-center">
+						<br />
+            <input type="submit" class="form-control" value="Valider" />
+            <br />
+          </div>
+         </div>
+
+
+			</div>
+
+		</form>
+
+	</body>
+</html>
